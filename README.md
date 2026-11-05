@@ -168,19 +168,3 @@ A custom request-validation handler maps invalid request bodies (including missi
 - The API does not include authentication/authorization because it was outside the assignment scope.
 - SQLite is the default local database; PostgreSQL is supported by changing `DATABASE_URL`.
 
-## GitHub submission
-
-Create an empty repository on GitHub named `user-management-api`, then run:
-
-```bash
-git init
-git add .
-git commit -m "Build user management API with Slack notifications"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/user-management-api.git
-git push -u origin main
-```
-
-Replace `YOUR_USERNAME` with your GitHub username. If Git asks for authentication, use GitHub's browser sign-in or a Personal Access Token; do not put credentials in the remote URL.
-
-After pushing, verify the README, source files, and Postman collection are visible on GitHub. Confirm `.env` and `users.db` are not committed.
