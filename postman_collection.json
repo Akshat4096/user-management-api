@@ -1,0 +1,37 @@
+{
+  "info": {
+    "name": "User Management API",
+    "_postman_id": "4d3a78b1-33d8-4a25-aeb0-b7f30c911201",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8000" },
+    { "key": "userId", "value": "replace-with-user-uuid" }
+  ],
+  "item": [
+    {
+      "name": "Create user",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alex Johnson\",\n  \"email\": \"alex@example.com\",\n  \"role\": \"member\"\n}"
+        },
+        "url": "{{baseUrl}}/users"
+      }
+    },
+    { "name": "List users", "request": { "method": "GET", "url": "{{baseUrl}}/users" } },
+    { "name": "Get user", "request": { "method": "GET", "url": "{{baseUrl}}/users/{{userId}}" } },
+    {
+      "name": "Update user",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"Alex Updated\",\n  \"role\": \"admin\"\n}" },
+        "url": "{{baseUrl}}/users/{{userId}}"
+      }
+    },
+    { "name": "Delete user", "request": { "method": "DELETE", "url": "{{baseUrl}}/users/{{userId}}" } }
+  ]
+}
